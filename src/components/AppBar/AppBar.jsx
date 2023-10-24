@@ -1,9 +1,8 @@
 import { Navigation } from '../Navigation/Navigation';
-
-import { AuthNav } from 'components/AuthNav/AuthNav';
+import { AuthNav } from '../AuthNav/AuthNav';
+import { UserMenu } from '../UserMenu/UserMenu';
 import { useAuth } from 'hooks/useAuth';
 import css from './AppBar.module.css';
-import { UserMenu } from 'components/UserMenu/UserMenu';
 
 export const AppBar = () => {
   const { isLoggedIn } = useAuth();
