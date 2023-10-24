@@ -2,7 +2,7 @@ import { useAuth } from 'hooks/useAuth';
 import css from './AppBar.module.css';
 import { Navigation } from 'components/Navigation/Navigation';
 import { UserMenu } from 'components/UserMenu/UserMenu';
-import { AuthNav } from 'components/authNav/AuthNav';
+import { AuthNavigation } from 'components/authNav/AuthNav';
 
 export const AppBar = () => {
   const { isLoggedIn } = useAuth();
@@ -10,7 +10,7 @@ export const AppBar = () => {
   return (
     <header className={css.header}>
       <Navigation />
-      {isLoggedIn ? <UserMenu /> : <AuthNav />}
+      {isLoggedIn ? <UserMenu /> : <AuthNavigation />}
     </header>
   );
 };
