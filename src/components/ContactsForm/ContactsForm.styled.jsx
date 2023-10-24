@@ -54,14 +54,15 @@ export const ButtonStyle = styled.button`
   line-height: 1.5;
   letter-spacing: 0.04em;
   color: inherit;
-  background-color: #fcf5ff91;
+  background-color: #45449e;
+  color: #ffffff;
 
   &:hover {
-    background-color: #8b8ba4;
-    color: white;
+    background-color: #1565c0;
+    color: #ffffff;
   }
 
   &:focus {
-    border-color: #3498db;
+    border-color: #1565c0;
   }
 `;

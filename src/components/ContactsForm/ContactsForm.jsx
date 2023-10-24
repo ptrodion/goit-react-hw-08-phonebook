@@ -9,8 +9,6 @@ import {
 } from './ContactsForm.styled';
 import { selectContacts } from 'redux/filter/selectors';
 import { addContact } from 'redux/contacts/operations';
-// import { addContact } from 'redux/operations';
-// import { selectContacts } from 'redux/selectors';
 
 export const ContactForm = () => {
   const dispatch = useDispatch();

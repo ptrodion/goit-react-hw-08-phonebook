@@ -1,14 +1,16 @@
-import React, { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-import { ResponsiveAppBar } from './ResponsiveAppBar/ResponsiveAppBar';
+import { Toaster } from 'react-hot-toast';
+import { AppBar } from './AppBar/AppBar';
+import { Suspense } from 'react';
 
 export const Layout = () => {
   return (
-    <>
-      <ResponsiveAppBar />
+    <div style={{ maxWidth: 1960, margin: '0 auto', padding: '0 16px' }}>
+      <AppBar />
       <Suspense fallback={null}>
         <Outlet />
       </Suspense>
-    </>
+      <Toaster position="top-right" reverseOrder={false} />
+    </div>
   );
 };

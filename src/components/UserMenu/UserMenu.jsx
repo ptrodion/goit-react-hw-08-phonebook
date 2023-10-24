@@ -20,12 +20,14 @@ export const UserMenu = () => {
         gap: '15px',
         alignItems: 'center',
         justifyContent: 'center',
+        marginRight: '15px',
       }}
     >
       <p
         style={{
           padding: '5px',
           bgcolor: 'inherit',
+          fontSize: '16px',
         }}
       >
         Your personal phone book, {user.name}

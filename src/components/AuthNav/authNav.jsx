@@ -1,16 +1,17 @@
 import MenuItem from '@mui/material/MenuItem';
 import { NavLink } from 'react-router-dom';
+import css from './AuthNav.module.css';
 
 export const AuthNav = () => {
   return (
     <>
       <MenuItem>
-        <NavLink style={{ textDecoration: 'none' }} to="/login">
+        <NavLink className={css.link} to="/login">
           Login
         </NavLink>
       </MenuItem>
       <MenuItem>
-        <NavLink style={{ textDecoration: 'none' }} to="/register">
+        <NavLink className={css.link} to="/register">
           Register
         </NavLink>
       </MenuItem>

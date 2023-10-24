@@ -11,7 +11,6 @@ import { refreshUser } from 'redux/auth/operations';
 import { Layout } from './Layout';
 import { PrivateRoute } from './PrivateRoute';
 import { RestrictedRoute } from './RestrictedRoute';
-import { Toaster } from 'react-hot-toast';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -20,25 +19,34 @@ export const App = () => {
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
+
   return isRefreshing ? (
     <b>Refreshing user...</b>
   ) : (
     <>
-      <Toaster></Toaster>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route
-            path="/contacts"
-            element={<PrivateRoute component={ContactsPage} />}
+            path="/register"
+            element={
+              <RestrictedRoute
+                redirectTo="/contacts"
+                component={<Register />}
+              />
+            }
           />
           <Route
             path="/login"
-            element={<RestrictedRoute component={Login} />}
+            element={
+              <RestrictedRoute redirectTo="/contacts" component={<Login />} />
+            }
           />
           <Route
-            path="/register"
-            element={<RestrictedRoute component={Register} />}
+            path="/contacts"
+            element={
+              <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
+            }
           />
         </Route>
       </Routes>
